@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "9992ba1a-0b8f-4806-a8dd-54d9569a45bb",
+		"name": "Server TODO Exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16700889"
+	},
+	"item": [		
+		{
+			"name": "students ex4 example",
+			"item": [
+				{
+					"name": "Create first TODO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"New Year\",\r\n  \"content\": \"prepare popcorn\",\r\n  \"dueDate\": 1703881891000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get total Todos with filter=ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo/size?status=ALL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo",
+								"size"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "ALL"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PENDING Todos content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo/content?status=PENDING&sortBy=TITLE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo",
+								"content"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING"
+								},
+								{
+									"key": "sortBy",
+									"value": "TITLE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo 5 status to DONE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo?id=5&status=DONE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								},
+								{
+									"key": "status",
+									"value": "DONE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo log level to DEBUG",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/logs/level?logger-name=todo-logger&logger-level=DEBUG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"logs",
+								"level"
+							],
+							"query": [
+								{
+									"key": "logger-name",
+									"value": "todo-logger"
+								},
+								{
+									"key": "logger-level",
+									"value": "DEBUG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create scond TODO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Reception hours for kaplat\",\r\n  \"content\": \"students... damn.\",\r\n  \"dueDate\": 1711744291000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get total Todos with filter=PENDING",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo/size?status=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo",
+								"size"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Todo 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:{{port}}/todo?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo 1 status to LATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo?id=1&status=LATE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "LATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get LATE Todos content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{port}}/todo/content?status=LATE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9583",
+							"path": [
+								"todo",
+								"content"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "LATE"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
